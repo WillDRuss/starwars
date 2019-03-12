@@ -3,7 +3,7 @@ import Character from './Character';
 
 const CharacterList = ({ people }) => {
 	return (
-		<div className = 'flex flex-wrap'>
+		<div className='flex flex-wrap justify-around' style={{'marginTop': '150px'}}>
 			{
 				people.map((user, i) => {
 					return (
@@ -14,6 +14,9 @@ const CharacterList = ({ people }) => {
 							gender={people[i].gender} 
 							mass={people[i].mass}
 							height={people[i].height}
+							films={people[i].films.length}
+							vehicles={people[i].vehicles.length}
+							starships={people[i].starships.length}
 						/>
 					)
 				})

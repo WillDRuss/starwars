@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CharacterList from './CharacterList';
+import Navbar from './Navbar';
+// import Scroll from './Scroll';
 import SearchBox from './SearchBox';
 import './App.css';
 
@@ -50,11 +52,13 @@ class App extends Component {
       } else {
         return (
           <div className="tc">
-            <header>
-              <h1 className="f1 gold">Star Wars Characters</h1>
-            </header>
-            <SearchBox searchChange={this.onSearchChange} />
-            <CharacterList people={filteredPeople}/>
+            <Navbar>
+              <header className='w-100'>
+                <h1 className="f1 gold ma2">Star Wars Characters</h1>
+              </header>
+              <SearchBox searchChange={this.onSearchChange} />
+            </Navbar>
+            <CharacterList id='cardlist' people={filteredPeople}/>
           </div>
         );
       }
